@@ -1,0 +1,62 @@
+<!-- views/edit.ejs -->
+<!-- Жанабекұлы Ислам — Рецепт өңдеу пішіні -->
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Рецепт өңдеу</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <header style="
+    background: #F6AD55; color: white;
+    padding: 20px 30px;
+    display: flex; justify-content: space-between; align-items: center;
+  ">
+    <h1 style="margin:0;">✏️ Рецепт өңдеу</h1>
+    <a href="/recepter" style="color:white; text-decoration:none;">← Тізімге оралу</a>
+  </header>
+
+  <main style="max-width:600px; margin:40px auto; padding:0 20px;">
+    <form
+      action="/recepter/<%= recept._id %>?_method=PUT"
+      method="POST"
+      style="background:white; padding:30px; border-radius:10px; box-shadow:0 3px 15px rgba(0,0,0,0.1);"
+    >
+      <label style="display:block; margin-bottom:5px; font-weight:bold; color:#333;">Рецепт атауы (aty):</label>
+      <input type="text" name="aty" value="<%= recept.aty %>"
+        style="width:100%; padding:12px; border:2px solid #ddd; border-radius:6px; font-size:1rem; margin-bottom:15px; box-sizing:border-box;">
+
+      <label style="display:block; margin-bottom:5px; font-weight:bold; color:#333;">Категориясы (kategoriya):</label>
+      <input type="text" name="kategoriya" value="<%= recept.kategoriya %>"
+        style="width:100%; padding:12px; border:2px solid #ddd; border-radius:6px; font-size:1rem; margin-bottom:15px; box-sizing:border-box;">
+
+      <label style="display:block; margin-bottom:5px; font-weight:bold; color:#333;">Дайындалу уақыты (aqyldary):</label>
+      <input type="text" name="aqyldary" value="<%= recept.aqyldary %>"
+        style="width:100%; padding:12px; border:2px solid #ddd; border-radius:6px; font-size:1rem; margin-bottom:15px; box-sizing:border-box;">
+
+      <label style="display:block; margin-bottom:5px; font-weight:bold; color:#333;">Қиындық деңгейі (qiyndygy):</label>
+      <input type="text" name="qiyndygy" value="<%= recept.qiyndygy %>"
+        style="width:100%; padding:12px; border:2px solid #ddd; border-radius:6px; font-size:1rem; margin-bottom:15px; box-sizing:border-box;">
+
+      <label style="display:block; margin-bottom:5px; font-weight:bold; color:#333;">Калориясы (kaloriya):</label>
+      <input type="number" name="kaloriya" value="<%= recept.kaloriya %>" min="0"
+        style="width:100%; padding:12px; border:2px solid #ddd; border-radius:6px; font-size:1rem; margin-bottom:15px; box-sizing:border-box;">
+
+      <label style="display:block; margin-bottom:5px; font-weight:bold; color:#333;">Адам саны (adamSany):</label>
+      <input type="number" name="adamSany" value="<%= recept.adamSany %>" min="1"
+        style="width:100%; padding:12px; border:2px solid #ddd; border-radius:6px; font-size:1rem; margin-bottom:20px; box-sizing:border-box;">
+
+      <button type="submit" style="
+        background:#F6AD55; color:white; border:none;
+        padding:14px 40px; border-radius:8px; font-size:1rem;
+        cursor:pointer; width:100%; font-weight:bold;">
+        💾 Сақтау
+      </button>
+    </form>
+  </main>
+
+</body>
+</html>

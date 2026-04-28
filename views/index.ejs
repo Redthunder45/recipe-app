@@ -1,0 +1,64 @@
+<!-- views/index.ejs -->
+<!-- Жанабекұлы Ислам — Рецептер тізімі (PW4 жаңартылды) -->
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>🍽 Ас үй Рецептері</h1>
+    <nav class="header-nav">
+      <% if (qoldanushy) { %>
+        <span style="opacity:0.9; font-size:0.9rem;">👤 <%= qoldanushy %></span>
+        <a href="/dashboard">Кабинет</a>
+        <a href="/shygu">Шығу</a>
+      <% } else { %>
+        <a href="/kiru">Кіру</a>
+        <a href="/tirkelu">Тіркелу</a>
+      <% } %>
+      <a href="/recept/qos" class="btn-add">+ Жаңа қосу</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2 style="color:#444; margin-bottom:4px;">
+      Рецептер тізімі
+      <span style="color:#F6AD55; font-size:0.9rem; font-weight:normal;">
+        (<%= malumattar.length %> жазба)
+      </span>
+    </h2>
+    <p style="color:#999; font-size:0.88rem; margin-bottom:20px;">Жаңадан ескіге қарай сұрыпталған</p>
+
+    <% if (malumattar.length === 0) { %>
+      <div class="empty-state">
+        <p>📭 Жазба жоқ.</p>
+        <a href="/recept/qos">Бірінші рецептті қос!</a>
+      </div>
+    <% } else { %>
+      <div class="recipe-grid">
+        <% malumattar.forEach(item => { %>
+          <div class="recipe-card">
+            <span class="badge">📂 <%= item.kategoriya %></span>
+            <h3>🍜 <%= item.aty %></h3>
+            <p>⏱ Уақыт: <strong><%= item.aqyldary %></strong></p>
+            <p>📊 Қиындық: <strong><%= item.qiyndygy %></strong></p>
+            <p>👥 Порция: <strong><%= item.adamSany %> адам</strong></p>
+            <p class="calorie">🔥 <%= item.kaloriya %> ккал</p>
+            <p class="date">📅 <%= new Date(item.qosylganKun).toLocaleDateString('kk-KZ') %></p>
+            <form action="/recepter/<%= item._id %>?_method=DELETE" method="POST">
+              <button type="submit" class="btn-danger" onclick="return confirm('Жоюды растайсыз ба?')">🗑 Жою</button>
+            </form>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+  </main>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

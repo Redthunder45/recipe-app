@@ -1,0 +1,230 @@
+/* public/css/auth.css */
+/* Жанабекұлы Ислам — Тіркелу / Кіру беттері стилі */
+
+.auth-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #FFFBF0 0%, #FEE5B8 50%, #FDDFA0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+/* ===== КОНТЕЙНЕР ===== */
+.auth-container {
+  width: 100%;
+  max-width: 430px;
+}
+
+/* ===== ЛОГОТИП БЛОГЫ ===== */
+.auth-logo {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.auth-logo img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(246, 173, 85, 0.3);
+}
+
+.auth-title {
+  color: #C05621;
+  font-size: 1.7rem;
+  margin-top: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.auth-subtitle {
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+/* ===== КАРТОЧКА ===== */
+.auth-card {
+  background: white;
+  border-radius: 18px;
+  padding: 38px 36px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
+
+.auth-card h2 {
+  color: #2d2d2d;
+  margin-bottom: 24px;
+  font-size: 1.45rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* ===== ФОРМА ТОПТАРЫ ===== */
+.form-group {
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 7px;
+  font-size: 0.88rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 2px solid #E8E8E8;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  background: #FAFAFA;
+  font-family: inherit;
+}
+
+.form-group input:focus {
+  border-color: #F6AD55;
+  background: white;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(246, 173, 85, 0.12);
+}
+
+/* Пароль input-інің оңжақ бөлігі (toggle батырмасына орын) */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  padding-right: 48px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.15rem;
+  color: #aaa;
+  padding: 4px;
+  transition: color 0.2s;
+  line-height: 1;
+}
+
+.toggle-password:hover {
+  color: #F6AD55;
+}
+
+/* ===== НЕГІЗГІ ТҮЙМЕ ===== */
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(90deg, #F6AD55, #ED8936);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+  letter-spacing: 0.4px;
+  box-shadow: 0 4px 15px rgba(246, 173, 85, 0.35);
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(246, 173, 85, 0.45);
+}
+
+.btn-primary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===== ҚАТЕ ХАБАРЛАМАСЫ ===== */
+.alert-danger {
+  background: #FFF5F5;
+  border: 2px solid #FC8181;
+  border-radius: 10px;
+  padding: 13px 18px;
+  margin-bottom: 20px;
+  color: #C53030;
+  font-size: 0.9rem;
+}
+
+.alert-danger p {
+  margin: 3px 0;
+}
+
+/* ===== ТАБЫСТЫ ХАБАРЛАМА ===== */
+.alert-success {
+  background: #F0FFF4;
+  border: 2px solid #68D391;
+  border-radius: 10px;
+  padding: 13px 18px;
+  margin-bottom: 20px;
+  color: #276749;
+  font-size: 0.9rem;
+}
+
+/* ===== СІЛТЕМЕ ===== */
+.auth-link {
+  text-align: center;
+  margin-top: 20px;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.auth-link a {
+  color: #ED8936;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.auth-link a:hover {
+  color: #C05621;
+  text-decoration: underline;
+}
+
+/* ===== DIVIDER ===== */
+.auth-divider {
+  text-align: center;
+  color: #bbb;
+  font-size: 0.85rem;
+  margin: 16px 0;
+  position: relative;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 42%;
+  height: 1px;
+  background: #eee;
+}
+
+.auth-divider::before { left: 0; }
+.auth-divider::after  { right: 0; }
+
+/* ===== ЖАУАП БЕРЕТІН ===== */
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 26px 20px;
+  }
+  .auth-title {
+    font-size: 1.4rem;
+  }
+}

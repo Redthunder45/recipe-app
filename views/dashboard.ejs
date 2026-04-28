@@ -1,0 +1,109 @@
+<!-- views/dashboard.ejs -->
+<!-- Жанабекұлы Ислам — Жеке кабинет (Dashboard) -->
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> | Ас үй Рецептері</title>
+  <!-- Статикалық CSS файлдарын қосу -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="dash-header">
+    <h1>🍽 Ас үй Рецептері</h1>
+    <div class="dash-user">
+      <span>👤 <strong><%= qoldanushyAty %></strong> қош келдіңіз!</span>
+      <a href="/shygu" class="btn-logout">🚪 Шығу</a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="dash-main">
+
+    <!-- Сәлемдесу баннері -->
+    <div class="welcome-banner">
+      <h2>🎉 Рецептер дүниесіне қош келдіңіз!</h2>
+      <p>Сіз жүйеге сәтті кірдіңіз. Рецептерді қарап, жаңа рецепт қосыңыз.</p>
+      <div class="quick-actions" style="margin-top: 16px;">
+        <a href="/recepter" class="btn-action btn-action-primary">📋 Рецептер тізімі</a>
+        <a href="/recept/qos" class="btn-action btn-action-secondary">➕ Жаңа рецепт</a>
+      </div>
+    </div>
+
+    <!-- Статистика -->
+    <div class="dash-stats">
+      <div class="stat-card">
+        <div class="stat-number">🍜</div>
+        <div class="stat-label">Рецептерім</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">❤️</div>
+        <div class="stat-label">Сүйіктілер</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">💬</div>
+        <div class="stat-label">Пікірлер</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">⭐</div>
+        <div class="stat-label">Бағалаулар</div>
+      </div>
+    </div>
+
+    <!-- Функциялар торы -->
+    <div class="dash-grid">
+
+      <div class="dash-card">
+        <span class="dash-card-icon">📋</span>
+        <h3>Рецептер тізімі</h3>
+        <p>Барлық қосылған рецептерді қарау, өңдеу және жою мүмкіндіктері.</p>
+        <a href="/recepter" class="dash-link">Тізімге өту →</a>
+      </div>
+
+      <div class="dash-card">
+        <span class="dash-card-icon">➕</span>
+        <h3>Жаңа рецепт қосу</h3>
+        <p>Өзіңіздің сүйікті рецептіңізді жүйеге қосып, сақтаңыз.</p>
+        <a href="/recept/qos" class="dash-link">Рецепт қосу →</a>
+      </div>
+
+      <div class="dash-card">
+        <span class="dash-card-icon">❤️</span>
+        <h3>Сүйікті рецептлер</h3>
+        <p>Ең ұнаған рецептерді жинақтап, тез табу мүмкіндігі.</p>
+        <a href="#" class="dash-link">Ашылу жақында →</a>
+      </div>
+
+      <div class="dash-card">
+        <span class="dash-card-icon">🔍</span>
+        <h3>Рецепт іздеу</h3>
+        <p>Категория, калория немесе атауы бойынша рецепт табыңыз.</p>
+        <a href="/recepter" class="dash-link">Іздеуге өту →</a>
+      </div>
+
+      <div class="dash-card">
+        <span class="dash-card-icon">📊</span>
+        <h3>Калория есебі</h3>
+        <p>Тамақтың калориясын бақылап, дұрыс тамақтану жоспарын жасаңыз.</p>
+        <a href="#" class="dash-link">Ашылу жақында →</a>
+      </div>
+
+      <div class="dash-card">
+        <span class="dash-card-icon">⚙️</span>
+        <h3>Аккаунт баптаулары</h3>
+        <p>Профиль ақпаратын жаңарту, пароль өзгерту және т.б.</p>
+        <a href="#" class="dash-link">Ашылу жақында →</a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Клиент JavaScript -->
+  <script src="/js/main.js"></script>
+</body>
+</html>

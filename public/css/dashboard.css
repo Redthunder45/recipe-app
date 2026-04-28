@@ -1,0 +1,226 @@
+/* public/css/dashboard.css */
+/* Жанабекұлы Ислам — Жеке кабинет стилі */
+
+/* ===== DASHBOARD HEADER ===== */
+.dash-header {
+  background: linear-gradient(90deg, #F6AD55, #ED8936);
+  color: white;
+  padding: 18px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.dash-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.dash-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.dash-user span {
+  font-size: 0.95rem;
+  opacity: 0.95;
+}
+
+.btn-logout {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  padding: 8px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 2px solid rgba(255,255,255,0.35);
+  transition: background 0.2s;
+}
+
+.btn-logout:hover {
+  background: rgba(255,255,255,0.35);
+}
+
+/* ===== НЕГІЗГІ МАЗМҰН ===== */
+.dash-main {
+  max-width: 1100px;
+  margin: 35px auto;
+  padding: 0 24px;
+}
+
+/* ===== СӘЛЕМДЕСУ БАННЕРІ ===== */
+.welcome-banner {
+  background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+  border: 2px solid #F6AD55;
+  border-radius: 14px;
+  padding: 30px 36px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.welcome-banner h2 {
+  color: #92400E;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.welcome-banner p {
+  color: #78350F;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+/* ===== DASHBOARD GRID ===== */
+.dash-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+/* ===== DASHBOARD КАРТОЧКАЛАРЫ ===== */
+.dash-card {
+  background: white;
+  border: 2px solid #E8E8E8;
+  border-radius: 14px;
+  padding: 28px 26px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.dash-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(246, 173, 85, 0.2);
+  border-color: #F6AD55;
+}
+
+.dash-card-icon {
+  font-size: 2.2rem;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.dash-card h3 {
+  color: #2d2d2d;
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.dash-card p {
+  color: #777;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.dash-link {
+  color: #ED8936;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dash-link:hover {
+  color: #C05621;
+}
+
+/* ===== СТАТИСТИКА ЖОЛАҒЫ ===== */
+.dash-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  border-top: 4px solid #F6AD55;
+}
+
+.stat-card .stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #F6AD55;
+}
+
+.stat-card .stat-label {
+  color: #666;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+/* ===== ЖЫЛДАМ ӘРЕКЕТ БАТЫРМАЛАРЫ ===== */
+.quick-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.btn-action {
+  padding: 10px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: all 0.2s;
+}
+
+.btn-action-primary {
+  background: linear-gradient(90deg, #F6AD55, #ED8936);
+  color: white;
+  box-shadow: 0 3px 10px rgba(246, 173, 85, 0.3);
+}
+
+.btn-action-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-action-secondary {
+  background: white;
+  color: #ED8936;
+  border: 2px solid #F6AD55;
+}
+
+.btn-action-secondary:hover {
+  background: #FEF3C7;
+}
+
+/* ===== ЖАУАП БЕРЕТІН ===== */
+@media (max-width: 640px) {
+  .dash-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  .dash-user {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .welcome-banner {
+    padding: 22px 20px;
+  }
+  .welcome-banner h2 {
+    font-size: 1.3rem;
+  }
+  .dash-grid {
+    grid-template-columns: 1fr;
+  }
+}

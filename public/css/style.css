@@ -1,0 +1,271 @@
+/* public/css/style.css */
+/* Жанабекұлы Ислам — recipe-app негізгі стильдері */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f3ee;
+  color: #333;
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+.site-header {
+  background: linear-gradient(90deg, #F6AD55, #ED8936);
+  color: white;
+  padding: 18px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.header-nav {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.header-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.header-nav a:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.btn-add {
+  background: white !important;
+  color: #F6AD55 !important;
+  font-weight: bold;
+}
+
+.btn-add:hover {
+  background: #fff8f0 !important;
+}
+
+/* ===== НЕГІЗГІ МАЗМҰН ===== */
+main {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* ===== РЕЦЕПТ КАРТОЧКАЛАРЫ ===== */
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 22px;
+  margin-top: 20px;
+}
+
+.recipe-card {
+  background: white;
+  border: 2px solid #F6AD55;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.recipe-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(246, 173, 85, 0.25);
+}
+
+.recipe-card h3 {
+  color: #2d2d2d;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.recipe-card .badge {
+  display: inline-block;
+  background: #FEF3C7;
+  color: #92400E;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.recipe-card p {
+  color: #666;
+  font-size: 0.88rem;
+  margin: 5px 0;
+}
+
+.recipe-card .calorie {
+  color: #F6AD55;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 10px 0 5px;
+}
+
+.recipe-card .date {
+  color: #bbb;
+  font-size: 0.78rem;
+  margin-bottom: 14px;
+}
+
+/* ===== БОС ЖАЗБА ===== */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 12px;
+  border: 2px dashed #ddd;
+  margin-top: 20px;
+}
+
+.empty-state p {
+  font-size: 1.1rem;
+  color: #999;
+  margin-bottom: 12px;
+}
+
+.empty-state a {
+  color: #F6AD55;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ===== ТҮЙМЕЛЕР ===== */
+.btn-danger {
+  background: #EF4444;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  width: 100%;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.btn-danger:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+/* ===== ФОРМА БЕТІ ===== */
+.form-page {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.form-card {
+  background: white;
+  border-radius: 12px;
+  padding: 35px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 6px;
+  font-size: 0.92rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #F6AD55;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(246, 173, 85, 0.15);
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(90deg, #F6AD55, #ED8936);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: opacity 0.2s, transform 0.15s;
+  letter-spacing: 0.3px;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* ===== ХАБАРЛАМА БЛОКТАРЫ ===== */
+.alert {
+  border-radius: 8px;
+  padding: 12px 18px;
+  margin-bottom: 18px;
+  font-size: 0.92rem;
+}
+
+.alert-danger {
+  background: #FFF5F5;
+  border: 2px solid #FC8181;
+  color: #C53030;
+}
+
+.alert-success {
+  background: #F0FFF4;
+  border: 2px solid #68D391;
+  color: #276749;
+}
+
+/* ===== ЖАУАП БЕРЕТІН МАКЕТ ===== */
+@media (max-width: 640px) {
+  .site-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  .recipe-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-card {
+    padding: 22px;
+  }
+}

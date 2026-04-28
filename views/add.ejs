@@ -1,0 +1,90 @@
+<!-- views/add.ejs -->
+<!-- Жанабекұлы Ислам — Рецепт қосу пішіні (PW4 жаңартылды) -->
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>🍽 Ас үй Рецептері</h1>
+    <nav class="header-nav">
+      <% if (qoldanushy) { %>
+        <span style="opacity:0.9; font-size:0.9rem;">👤 <%= qoldanushy %></span>
+        <a href="/dashboard">Кабинет</a>
+        <a href="/shygu">Шығу</a>
+      <% } %>
+      <a href="/recepter">← Тізімге оралу</a>
+    </nav>
+  </header>
+
+  <div class="form-page">
+    <div class="form-card">
+      <h2 style="margin-bottom:24px; color:#2d2d2d;">➕ Жаңа Рецепт қосу</h2>
+
+      <% if (qateler.length > 0) { %>
+        <div class="alert alert-danger">
+          <% qateler.forEach(q => { %>
+            <p>❌ <%= q.msg %></p>
+          <% }) %>
+        </div>
+      <% } %>
+
+      <form action="/recept/qos" method="POST" class="auth-form">
+
+        <div class="form-group">
+          <label>🍜 Рецепт атауы (aty):</label>
+          <input type="text" name="aty" placeholder="мысалы: Бешбармақ" required>
+        </div>
+
+        <div class="form-group">
+          <label>📂 Категориясы (kategoriya):</label>
+          <select name="kategoriya" required>
+            <option value="">— Категория таңдаңыз —</option>
+            <option value="Ет">Ет</option>
+            <option value="Көкөніс">Көкөніс</option>
+            <option value="Тәтті">Тәтті</option>
+            <option value="Сусын">Сусын</option>
+            <option value="Балық">Балық</option>
+            <option value="Ботқа">Ботқа</option>
+            <option value="Сорпа">Сорпа</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>⏱ Дайындалу уақыты (aqyldary):</label>
+          <input type="text" name="aqyldary" placeholder="мысалы: 2 сағат, 30 минут" required>
+        </div>
+
+        <div class="form-group">
+          <label>📊 Қиындық деңгейі (qiyndygy):</label>
+          <select name="qiyndygy" required>
+            <option value="">— Деңгей таңдаңыз —</option>
+            <option value="Оңай">Оңай</option>
+            <option value="Орта">Орта</option>
+            <option value="Қиын">Қиын</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>🔥 Калориясы — ккал (kaloriya):</label>
+          <input type="number" name="kaloriya" placeholder="мысалы: 650" min="0" required>
+        </div>
+
+        <div class="form-group">
+          <label>👥 Адам саны — порция (adamSany):</label>
+          <input type="number" name="adamSany" placeholder="мысалы: 4" min="1" required>
+        </div>
+
+        <button type="submit" class="btn-primary">✅ Сақтау</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

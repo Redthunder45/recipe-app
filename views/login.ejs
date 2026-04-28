@@ -1,0 +1,86 @@
+<!-- views/login.ejs -->
+<!-- Жанабекұлы Ислам — Жүйеге кіру беті -->
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> | Ас үй Рецептері</title>
+  <!-- Статикалық CSS файлдарын қосу -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/auth.css">
+</head>
+<body class="auth-page">
+
+  <div class="auth-container">
+
+    <!-- Логотип / Сайт атауы -->
+    <div class="auth-logo">
+      <img
+        src="/images/logo.png"
+        alt="Ас үй Рецептері логотипі"
+        onerror="this.style.display='none'"
+      >
+      <h1 class="auth-title">🍽 Ас үй Рецептері</h1>
+      <p class="auth-subtitle">Үздік рецептер платформасы</p>
+    </div>
+
+    <!-- Кіру карточкасы -->
+    <div class="auth-card">
+      <h2>Жүйеге кіру</h2>
+
+      <!-- Валидация қателерін көрсету -->
+      <% if (qateler.length > 0) { %>
+        <div class="alert alert-danger">
+          <% qateler.forEach(q => { %>
+            <p>❌ <%= q.msg %></p>
+          <% }) %>
+        </div>
+      <% } %>
+
+      <!-- Кіру пішіні -->
+      <form action="/kiru" method="POST" class="auth-form">
+
+        <div class="form-group">
+          <label for="email">📧 Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="email@example.com"
+            required
+            autocomplete="email"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="parol">🔒 Пароль:</label>
+          <input
+            type="password"
+            id="parol"
+            name="parol"
+            placeholder="Парольді енгізіңіз"
+            required
+            autocomplete="current-password"
+          >
+        </div>
+
+        <button type="submit" class="btn-primary">
+          🚀 Кіру
+        </button>
+
+      </form>
+
+      <div class="auth-divider">немесе</div>
+
+      <p class="auth-link">
+        Тіркелмедіңіз бе? <a href="/tirkelu">Тіркелу →</a>
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Клиент JavaScript -->
+  <script src="/js/main.js"></script>
+</body>
+</html>
